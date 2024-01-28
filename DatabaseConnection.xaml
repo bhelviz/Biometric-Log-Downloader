@@ -1,0 +1,61 @@
+﻿<Window x:Class="Biometric_Log_Downloader.DatabaseConnection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Biometric_Log_Downloader"
+        mc:Ignorable="d"
+        Title="Database Connection" Height="300" Width="300">
+    <Grid  Margin="2">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content = "Microsoft SQL Server Details" FontSize = "15"  FontWeight = "Bold" Grid.Column = "0" Grid.Row = "0" HorizontalAlignment="Center"/>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "1">
+            <Label Content = "IP"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "DBIP" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "2">
+            <Label Content = "Port"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "DBPort" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "3">
+            <Label Content = "Database"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "DBName" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "4">
+            <Label Content = "Username"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "DBUser" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "5">
+            <Label Content = "Password"  VerticalAlignment = "Center" Width = "70"/>
+            <PasswordBox x:Name="DBPass" Password="" VerticalAlignment = "Center"  Width = "200">
+            </PasswordBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Vertical" Grid.Column = "0" Grid.Row = "6">
+            <Button x:Name="DBSave" Content="SAVE" Width="100" HorizontalAlignment="Center" Click="saveDBClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

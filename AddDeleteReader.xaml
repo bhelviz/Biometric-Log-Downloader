@@ -1,0 +1,54 @@
+﻿<Window x:Class="Biometric_Log_Downloader.AddDeleteReader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Biometric_Log_Downloader"
+        mc:Ignorable="d"
+        Title="Add/Delete Reader" Height="400" Width="300">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="List of Reader(s)" FontSize = "15"  FontWeight = "Bold" Grid.Column = "0" Grid.Row = "0" HorizontalAlignment="Center"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column = "0" Grid.Row = "1" Margin="8">
+            <ListBox x:Name="readerList">
+                
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Vertical" Grid.Column = "0" Grid.Row = "2" Margin="8">
+            <Button x:Name="readerDelete" Content="DELETE" Width="100" Click="readerDeleteClick"/>
+        </StackPanel>
+
+        <Label Content="Add Reader" FontSize = "15"  FontWeight = "Bold" Grid.Column = "0" Grid.Row = "3" HorizontalAlignment="Center"/>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "4" Margin="2">
+            <Label Content = "IP"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "readerIP" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>           
+        </StackPanel>
+
+        <StackPanel Orientation = "Horizontal" Grid.Column = "0" Grid.Row = "5" Margin="2">
+            <Label Content = "Description"  VerticalAlignment = "Center" Width = "70"/>
+            <TextBox x:Name = "readerDescription" Text = "" VerticalAlignment = "Center"  Width = "200">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation = "Vertical" Grid.Column = "0" Grid.Row = "6" Margin="8">
+            <Button x:Name="readerAdd" Content="ADD" Width="100" VerticalAlignment="Center" Click="readerAddClick"/>
+        </StackPanel>
+    </Grid>
+</Window>
