@@ -31,8 +31,58 @@
                 <MenuItem Header="About" x:Name="about" Click="aboutClick"/>
             </MenuItem>
         </Menu>
-        <Grid>
-                
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>               
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "*" />
+                <ColumnDefinition Width = "*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Reader(s)" FontSize="16" FontWeight="UltraBold" HorizontalAlignment="Center"/>
+                <DataGrid Grid.Row="1" x:Name="ReaderListMain" 
+                            ColumnWidth="*" 
+                            EnableRowVirtualization="false" 
+                            CanUserAddRows="False" 
+                            CanUserResizeRows = "false" 
+                            CanUserReorderColumns="False"
+                            CanUserSortColumns="False">   
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
+                <Button Grid.Row="2" x:Name="CheckStatus" Content="CHECK STATUS"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "*" />
+                </Grid.ColumnDefinitions>                
+                <Label Grid.Row="0" Content="Download Log" FontSize="16" FontWeight="UltraBold" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="1" x:Name="DownloadLog" FontSize="16" FontWeight="UltraBold" HorizontalAlignment="Center"/>
+                <Button Grid.Row="2" x:Name="DownloadData" Content="DOWNLOAD DATA"/>
+            </Grid>
+
         </Grid>
         <StatusBar Grid.Row="2">
             <StatusBarItem>

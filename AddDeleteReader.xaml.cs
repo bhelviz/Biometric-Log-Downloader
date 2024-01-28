@@ -50,6 +50,8 @@ namespace Biometric_Log_Downloader
                 var jsonString = JsonConvert.SerializeObject(jArray, Formatting.Indented);
 
                 File.WriteAllText("C:\\Biometric_Log_Downloader\\Readers.json", jsonString);
+
+                ((MainWindow)System.Windows.Application.Current.MainWindow).ReaderListMain.ItemsSource = ((MainWindow)System.Windows.Application.Current.MainWindow).LoadReaderStatusData();
             }
         }
 
@@ -77,6 +79,8 @@ namespace Biometric_Log_Downloader
                 var jsonString = JsonConvert.SerializeObject(jArray, Formatting.Indented);
 
                 File.WriteAllText("C:\\Biometric_Log_Downloader\\Readers.json", jsonString);
+
+                ((MainWindow)System.Windows.Application.Current.MainWindow).ReaderListMain.ItemsSource = ((MainWindow)System.Windows.Application.Current.MainWindow).LoadReaderStatusData();
             }
 
         }

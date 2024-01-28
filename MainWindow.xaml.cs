@@ -123,7 +123,40 @@ namespace Biometric_Log_Downloader
                     Console.WriteLine(Ex.ToString());
                 }
             }
+            ReaderListMain.ItemsSource = LoadReaderStatusData();
         }
+
+        public List<ReaderStatus> LoadReaderStatusData()
+        {
+            int i = 0;
+            List<ReaderStatus> readers = new List<ReaderStatus>();
+
+            string jsonStr = File.ReadAllText("C:\\Biometric_Log_Downloader\\Readers.json");
+            JArray jsonArr = JArray.Parse(jsonStr);
+
+            foreach (JObject obj in jsonArr)
+            {
+                 
+                readers.Add(new ReaderStatus()
+                {
+                    SL = ++i,
+                    IP = (string)obj["IP"],
+                    Description = (string)obj["Description"],
+                    Status = "-"
+                });
+            }
+
+            return readers;
+        }
+
     }
+
+    public class ReaderStatus {
+        public int SL { get; set; }
+        public string IP { get; set; }
+        public string Description { get; set; }
+        public string Status { get; set; }
+    }
+
 }
 
